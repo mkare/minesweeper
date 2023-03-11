@@ -6,7 +6,7 @@ const MinesweeperBoard = () => {
   // Define the size of the game board
   const boardWidth = 7;
   const boardHeight = 7;
-  const bombCount = 10;
+  const bombCount = 7;
 
   // Define the initial state of the game board
   const [board, setBoard] = useState(() => {
