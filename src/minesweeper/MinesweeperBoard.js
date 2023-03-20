@@ -82,7 +82,9 @@ const MinesweeperBoard = () => {
       return;
     }
 
-    // Check if the game is won
+    console.log(revealedCount, boardWidth * boardHeight - bombCount);
+
+    // Check if the game has been won
     if (revealedCount === boardWidth * boardHeight - bombCount) {
       setGameWon(true);
       return;
@@ -132,7 +134,7 @@ const MinesweeperBoard = () => {
   const giveOneChance = () => {
     setGameOver(false);
     setGameWon(false);
-    setRevealedCount(0);
+    // setRevealedCount(0);
     setFlagsRemaining(bombCount);
   };
 
