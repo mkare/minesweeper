@@ -175,12 +175,14 @@ const MinesweeperBoard = () => {
             >
               Reset Game
             </button>
-            <button
-              className="rounded-lg bg-teal-600 px-4 py-2 font-semibold text-teal-50 shadow-lg hover:bg-gray-300 hover:text-teal-800"
-              onClick={giveOneChance}
-            >
-              Give me one more chance
-            </button>
+            {!gameWon && (
+              <button
+                className="rounded-lg bg-teal-600 px-4 py-2 font-semibold text-teal-50 shadow-lg hover:bg-gray-300 hover:text-teal-800"
+                onClick={giveOneChance}
+              >
+                Give me one more chance
+              </button>
+            )}
           </div>
         ) : null}
 
