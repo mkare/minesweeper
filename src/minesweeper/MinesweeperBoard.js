@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import "./MinesweeperBoard.css";
 
 const MinesweeperBoard = () => {
   // Define the size of the game board
@@ -134,7 +133,7 @@ const MinesweeperBoard = () => {
   const giveOneChance = () => {
     setGameOver(false);
     setGameWon(false);
-    // setRevealedCount(0);
+    setRevealedCount(0);
     setFlagsRemaining(bombCount);
   };
 
@@ -148,7 +147,7 @@ const MinesweeperBoard = () => {
     } else if (gameWon) {
       return "text-green-50 bg-green-800";
     }
-    return "text-neutral-50 bg-neutral-200";
+    return "text-neutral-50 bg-neutral-300";
   };
 
   // Render the game board
@@ -191,7 +190,7 @@ const MinesweeperBoard = () => {
             {row.map((cell, x) => (
               <div
                 key={`${x}-${y}`}
-                className="cell h-12 w-12 border-2 border-gray-400 bg-gray-300 text-center shadow-lg"
+                className="flex h-12 w-12 cursor-pointer items-center justify-center border-2 border-slate-400 bg-slate-300 text-center text-xl font-bold shadow-lg"
                 onClick={() => handleCellClick(cell)}
                 onContextMenu={(event) => handleCellRightClick(event, cell)}
               >
@@ -211,7 +210,7 @@ const MinesweeperBoard = () => {
                     🚩
                   </span>
                 ) : (
-                  <span role="img" aria-label="blank" className="h-full w-full bg-slate-50"></span>
+                  <span role="img" aria-label="blank" className="h-full w-full bg-slate-50 hover:bg-slate-300"></span>
                 )}
               </div>
             ))}
